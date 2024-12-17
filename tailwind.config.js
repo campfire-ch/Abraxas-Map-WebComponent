@@ -8,10 +8,7 @@ export default {
         roboto: ["Roboto", "sans-serif"],
       },
       colors: {
-        "kompass-blue-40": "#073B5F",
-        "kompass-blue-100": "#0A5182",
-        "kompass-blue-120": "#073B5F",
-        "kompass-blue-140": "#E0E8F7",
+        "petrol-100": "#005D76"
       },
       boxShadow: {
         "3xl": "2px 6px 10px 0px #0000000D",

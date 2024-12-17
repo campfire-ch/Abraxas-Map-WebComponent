@@ -16,9 +16,15 @@
 </script>
 
 <main>
-  <div class="map-title">{title}</div>
-  <Map src={mapScr} />
-  <Accordion />
+  <h2 class="text-petrol-100 text-[32px]">{title}</h2>
+  <div class="md:flex">
+    <div class="md:flex-none md:w-1/2 bg-[#E5EFF1] md:mr-3">
+      <Map src={mapScr} />
+    </div>
+    <div class="md:flex-none md:w-1/2 md:ml-3">
+      <Accordion />
+    </div>
+  </div>
 </main>
 
 <style>
