@@ -1,18 +1,8 @@
 <script lang="ts">
-    import { selectedRegionStore } from "../stores/mapStores";
+    import { regionsCulture, selectedRegionStore } from "../stores/mapStores";
     import { slide } from "svelte/transition";
     import { expoInOut } from "svelte/easing";
 
-    let regions = [
-        {
-            index: "frauenfled",
-            name: "Fraeunfeld",
-        },
-        {
-            index: "bern",
-            name: "bern",
-        },
-    ];
     const handleClick = (index: string) => {
         if ($selectedRegionStore === index) {
             $selectedRegionStore = null;
@@ -20,6 +10,9 @@
             $selectedRegionStore = index;
         }
     };
+    let { lang }: { lang: string } = $props();
+
+    let regions = regionsCulture[lang];
 </script>
 
 <div class="flex flex-col gap-4">
@@ -41,11 +34,7 @@
                         easing: expoInOut,
                     }}
                 >
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Distinctio non necessitatibus, officia impedit molestiae
-                    repellendus tempore ratione deserunt sunt temporibus animi
-                    accusantium perferendis laboriosam. Facere non cum iure ipsa
-                    in!
+                    {region.description}
                 </div>
             {/if}
         </div>

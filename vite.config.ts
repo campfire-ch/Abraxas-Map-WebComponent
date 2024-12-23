@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
-
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [svelte()],
@@ -8,9 +7,9 @@ export default defineConfig({
     rollupOptions: {
       output: {
         // Use fixed filenames without hashes
-        entryFileNames: 'assets/abraxas-map-webcomponent.js',
-        chunkFileNames: 'assets/abraxas-map-webcomponent.js',
-        assetFileNames: 'assets/abraxas-map-webcomponent.[ext]',
+        entryFileNames: 'frontend/abraxas-map-webcomponent.js',
+        chunkFileNames: 'frontend/abraxas-map-webcomponent.js',
+        assetFileNames: 'frontend/abraxas-map-webcomponent.[ext]',
       },
     },
   },

@@ -7,22 +7,25 @@
 
   let mainApp = document.getElementById("abraxas-map-webcomponent");
   let title: string | undefined;
-  let mapScr: string | undefined;
+  let lang: string = document.documentElement.lang || "de";
+  if (lang !== "fr" && lang !== "de") {
+    lang = "de";
+  }
 
   if (mainApp) {
     title = mainApp.dataset.title;
-    mapScr = mainApp.dataset.mapSrc;
   }
 </script>
 
 <main>
+  {import.meta.env.BASE_URL}
   <h2 class="text-petrol-100 text-[32px]">{title}</h2>
   <div class="md:flex">
     <div class="md:flex-none md:w-1/2 bg-[#E5EFF1] md:mr-3">
-      <Map src={mapScr} />
+      <Map />
     </div>
     <div class="md:flex-none md:w-1/2 md:ml-3">
-      <Accordion />
+      <Accordion {lang} />
     </div>
   </div>
 </main>
